@@ -42,10 +42,9 @@ const Navbar = () => {
         <Link to={"/bitcoin"}>
           <li className="m-10 cursor-pointer text-xl">Bitcoin Transactions</li>
         </Link>
-        <Link to={"/leaderboard"}>
-          <li className="m-10 cursor-pointer text-xl">Leaderboard</li>
+        <Link to={"/qrcode"}>
+          <li className="m-10 cursor-pointer text-xl">QR Code</li>
         </Link>
-        <li className="m-10 cursor-pointer text-xl">Blog</li>
       </ul>
       <div className="mr-20 flex">
         <select

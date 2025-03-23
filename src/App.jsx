@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Coin from "./pages/Coin";
 import Bitcoin from "./pages/Bitcoin";
-import Leaderboard from "./pages/Leaderboard";
+import QRcode from "./pages/QRCode";
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/coin/:coinId" element={<Coin />} />
           <Route path="/bitcoin" element={<Bitcoin />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/qrcode" element={<QRcode />} />
         </Routes>
         <Footer />
       </div>

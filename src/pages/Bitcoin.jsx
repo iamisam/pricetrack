@@ -72,7 +72,7 @@ const Bitcoin = () => {
   const totalCurrencySpent = btcPrice ? totalBitcoinSpent * btcPrice : 0;
 
   const API_URL = "https://api.blockcypher.com/v1/btc/main/addrs/";
-  const balanceForCSV = 0;
+  let balanceForCSV = 0;
   async function fetchBalanceForCSV() {
     try {
       const response = await fetch(
