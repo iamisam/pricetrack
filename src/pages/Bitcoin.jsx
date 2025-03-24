@@ -105,11 +105,12 @@ const Bitcoin = () => {
   });
 
   return (
-    <div className="flex items-center justify-center min-h-full">
+    <div className="flex items-center justify-center min-h-screen">
       <div className="p-4 m-10 flex flex-col">
-        <h2 className="mb-10 text-gradient text-3xl font-bold text-white">
-          View your Bitcoin Transactions
+        <h2 className="mb-10 text-gradient text-5xl font-bold text-white">
+          Load Bitcoin Transactions
         </h2>
+        <p className="text-2xl font-semibold text-amber-400">A single place to view,<br />or download all the bitcoin transaction of any address.<br /> Fetches 10 latest transactions at a time.</p> 
         <input
           type="text"
           placeholder="Enter Bitcoin Address"
