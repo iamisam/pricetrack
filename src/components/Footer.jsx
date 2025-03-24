@@ -11,6 +11,7 @@ const Footer = () => {
         <MdEmail className="mt-1"/>: isamaziz256@gmail.com &nbsp; | &nbsp;
         <MdLocalPhone className="mt-1"/>: (+91) 8969692882
       </p>
+      <p className="text-white">The website isn't optimized yet for viewing on smaller screens. If the site is distorted, consider zooming out.</p>
     </div>
   );
 };
