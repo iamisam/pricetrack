@@ -33,8 +33,8 @@ const QRcode = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
       <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
-        <h1 className="text-2xl font-semibold mb-4 text-center">Generate Bitcoin QR Code</h1>
-        
+        <h1 className="text-2xl font-semibold mb-4 text-center text-red-800">Generate QR Code</h1>
+        <p className="text-center font-semibold text-cyan-800">Generate a downloadable QR Code for your bitcoin address</p>
         <input
           type="text"
           className="w-full p-2 border border-gray-300 rounded-lg mb-4"
