@@ -9,7 +9,7 @@ const Footer = () => {
       <p className="text-white flex flex-row items-center ml-140 font-bold text-lg mt-10">
         Contact me @ &nbsp;
         <MdEmail className="mt-1"/>: isamaziz256@gmail.com &nbsp; | &nbsp;
-        <MdLocalPhone className="mt-1"/>: (+91) 8969692882
+        <MdLocalPhone className="mt-1"/>: (+91) 8969692882 &nbsp;
       </p>
       <p className="text-white">The website isn't optimized yet for viewing on smaller screens. If the site is distorted, consider zooming out.</p>
     </div>

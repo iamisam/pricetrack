@@ -6,7 +6,7 @@ import html2canvas from 'html2canvas';
 
 const QRcode = () => {
   const [bitcoinAddress, setBitcoinAddress] = useState('');
-  const [qrGenerated, setQrGenerated] = useState(false); // Track whether the QR code is generated
+  const [qrGenerated, setQrGenerated] = useState(false); 
   const qrRef = useRef(null);
 
   const handleBitcoinAddressChange = (e) => {
@@ -15,7 +15,7 @@ const QRcode = () => {
 
   const handleGenerateQR = () => {
     if (bitcoinAddress) {
-      setQrGenerated(true); // Set QR generation to true
+      setQrGenerated(true); 
     }
   };
 

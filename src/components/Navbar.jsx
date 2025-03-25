@@ -45,6 +45,9 @@ const Navbar = () => {
         <Link to={"/qrcode"}>
           <li className="m-10 cursor-pointer text-xl">QR Code</li>
         </Link>
+        <Link to={"/guide"}>
+          <li className="m-10 cursor-pointer text-xl">Purpose</li>
+        </Link>
       </ul>
       <div className="mr-20 flex">
         <select

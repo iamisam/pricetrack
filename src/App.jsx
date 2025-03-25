@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Coin from "./pages/Coin";
 import Bitcoin from "./pages/Bitcoin";
+import About from "./pages/About";
 import QRcode from "./pages/QRCode";
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/coin/:coinId" element={<Coin />} />
           <Route path="/bitcoin" element={<Bitcoin />} />
           <Route path="/qrcode" element={<QRcode />} />
+          <Route path="/guide" element={<About />} />
         </Routes>
         <Footer />
       </div>
