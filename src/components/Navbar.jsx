@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="flex flex-row mr-2">
         <Link to={"/"} className="flex flex-row mr-2">
           <img className="h-20 w-30 rounded-full" src={Logo} alt="Logo" />
-          <span className="text-3xl font-bold text-white mt-5">BitNexus</span>
+          <span className="text-3xl font-bold text-white mt-5">PriceTrack</span>
         </Link>
       </div>
       <ul className="flex text-white justify-between items-center">
