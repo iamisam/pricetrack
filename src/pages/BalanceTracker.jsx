@@ -15,7 +15,7 @@ export default function BalanceTracker() {
 
     try {
       const response = await fetch(
-        `${API_URL}${address}/balance?token=${BC_KEY}`
+        `${API_URL}${address}/balance?token=${BC_KEY}`,
       );
       const data = await response.json();
 
