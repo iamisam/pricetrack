@@ -8,12 +8,14 @@ const CoinContextProvider = (props) => {
     symbol: "$",
   });
 
+  const gecko = import.meta.env.GECKO_API;
+
   const fetchAllCoin = async () => {
     const options = {
       method: "GET",
       headers: {
         accept: "application/json",
-        "x-cg-demo-api-key": "CG-rMqEAsDi7qofiV5pf3RKJQxN",
+        "x-cg-demo-api-key": gecko,
       },
     };
 
