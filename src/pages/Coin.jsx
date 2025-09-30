@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { coinContext } from "../context/CoinContext";
 
 const Coin = () => {
+  const gecko_key = import.meta.env.VITE_GECKO_API;
   const { coinId } = useParams();
   const [coinData, setCoinData] = useState(null);
   const [historicalData, setHistoricalData] = useState(null);
@@ -18,13 +19,13 @@ const Coin = () => {
         method: "GET",
         headers: {
           accept: "application/json",
-          "x-cg-demo-api-key": "	CG-rMqEAsDi7qofiV5pf3RKJQxN",
+          "x-cg-demo-api-key": gecko_key,
         },
       };
       try {
         const response = await fetch(
           `https://api.coingecko.com/api/v3/coins/${coinId}`,
-          options,
+          options
         );
         const data = await response.json();
         setCoinData(data);
@@ -44,13 +45,13 @@ const Coin = () => {
       method: "GET",
       headers: {
         accept: "application/json",
-        "x-cg-demo-api-key": "CG-rMqEAsDi7qofiV5pf3RKJQxN",
+        "x-cg-demo-api-key": gecko_key,
       },
     };
     try {
       const response = await fetch(
         `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=${currency.name}&days=${selectedDays}`,
-        options,
+        options
       );
       const data = await response.json();
       setHistoricalData(data);

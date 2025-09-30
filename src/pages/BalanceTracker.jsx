@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const API_URL = "https://api.blockcypher.com/v1/btc/main/addrs/";
-
+const BC_KEY = import.meta.env.VITE_BC_API;
 export default function BalanceTracker() {
   const [address, setAddress] = useState("");
   const [balance, setBalance] = useState(null);
@@ -15,7 +15,7 @@ export default function BalanceTracker() {
 
     try {
       const response = await fetch(
-        `${API_URL}${address}/balance?token=8eb8d272ea8a458884f7fd20341ff763`,
+        `${API_URL}${address}/balance?token=${BC_KEY}`
       );
       const data = await response.json();
 

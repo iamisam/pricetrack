@@ -4,7 +4,8 @@ import { coinContext } from "../context/CoinContext"; // Import context
 import BalanceTracker from "./BalanceTracker";
 
 const Bitcoin = () => {
-  const token = "8eb8d272ea8a458884f7fd20341ff763";
+  const token = import.meta.env.VITE_BC_API;
+  const gecko_key = import.meta.env.VITE_GECKO_API;
   const [address, setAddress] = useState("");
   const [transactions, setTransactions] = useState([]);
   const [btcPrice, setBtcPrice] = useState(null);
@@ -23,13 +24,13 @@ const Bitcoin = () => {
       method: "GET",
       headers: {
         accept: "application/json",
-        "x-cg-demo-api-key": "CG-rMqEAsDi7qofiV5pf3RKJQxN",
+        "x-cg-demo-api-key": gecko_key,
       },
     };
     try {
       const response = await fetch(
         `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency.name}`,
-        options,
+        options
       );
       const data = await response.json();
       setBtcPrice(data.bitcoin[currency.name.toLowerCase()]);
@@ -76,7 +77,7 @@ const Bitcoin = () => {
   async function fetchBalanceForCSV() {
     try {
       const response = await fetch(
-        `${API_URL}${address}/balance?token=8eb8d272ea8a458884f7fd20341ff763`,
+        `${API_URL}${address}/balance?token=8eb8d272ea8a458884f7fd20341ff763`
       );
       const data = await response.json();
       if (data.error) {
@@ -110,7 +111,12 @@ const Bitcoin = () => {
         <h2 className="mb-10 text-gradient text-5xl font-bold text-white">
           Load Bitcoin Transactions
         </h2>
-        <p className="text-2xl font-semibold text-amber-400">A single place to view,<br />or download all the bitcoin transaction of any address.<br /> Fetches 10 latest transactions at a time.</p> 
+        <p className="text-2xl font-semibold text-amber-400">
+          A single place to view,
+          <br />
+          or download all the bitcoin transaction of any address.
+          <br /> Fetches 10 latest transactions at a time.
+        </p>
         <input
           type="text"
           placeholder="Enter Bitcoin Address"
@@ -157,7 +163,7 @@ const Bitcoin = () => {
                     const amountBTC =
                       tx.outputs.reduce(
                         (sum, output) => sum + output.value,
-                        0,
+                        0
                       ) / 1e8;
 
                     const amountCurrency = btcPrice ? amountBTC * btcPrice : 0;
