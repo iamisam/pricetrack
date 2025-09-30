@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const API_URL = "https://api.blockcypher.com/v1/btc/main/addrs/";
-const BC_KEY = import.meta.env.VITE_BC_API;
+const BC_KEY = import.meta.env.BC_API;
 export default function BalanceTracker() {
   const [address, setAddress] = useState("");
   const [balance, setBalance] = useState(null);

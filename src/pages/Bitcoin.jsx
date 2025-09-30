@@ -4,8 +4,8 @@ import { coinContext } from "../context/CoinContext"; // Import context
 import BalanceTracker from "./BalanceTracker";
 
 const Bitcoin = () => {
-  const token = import.meta.env.VITE_BC_API;
-  const gecko_key = import.meta.env.VITE_GECKO_API;
+  const token = import.meta.env.BC_API;
+  const gecko_key = import.meta.env.GECKO_API;
   const [address, setAddress] = useState("");
   const [transactions, setTransactions] = useState([]);
   const [btcPrice, setBtcPrice] = useState(null);
@@ -30,7 +30,7 @@ const Bitcoin = () => {
     try {
       const response = await fetch(
         `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency.name}`,
-        options
+        options,
       );
       const data = await response.json();
       setBtcPrice(data.bitcoin[currency.name.toLowerCase()]);
@@ -77,7 +77,7 @@ const Bitcoin = () => {
   async function fetchBalanceForCSV() {
     try {
       const response = await fetch(
-        `${API_URL}${address}/balance?token=8eb8d272ea8a458884f7fd20341ff763`
+        `${API_URL}${address}/balance?token=8eb8d272ea8a458884f7fd20341ff763`,
       );
       const data = await response.json();
       if (data.error) {
@@ -163,7 +163,7 @@ const Bitcoin = () => {
                     const amountBTC =
                       tx.outputs.reduce(
                         (sum, output) => sum + output.value,
-                        0
+                        0,
                       ) / 1e8;
 
                     const amountCurrency = btcPrice ? amountBTC * btcPrice : 0;
