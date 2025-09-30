@@ -4,8 +4,8 @@ import { coinContext } from "../context/CoinContext"; // Import context
 import BalanceTracker from "./BalanceTracker";
 
 const Bitcoin = () => {
-  const token = import.meta.env.BC_API;
-  const gecko_key = import.meta.env.GECKO_API;
+  const token = import.meta.env.VITE_BC_API;
+  const gecko_key = import.meta.env.VITE_GECKO_API;
   const [address, setAddress] = useState("");
   const [transactions, setTransactions] = useState([]);
   const [btcPrice, setBtcPrice] = useState(null);

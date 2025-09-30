@@ -8,7 +8,7 @@ const CoinContextProvider = (props) => {
     symbol: "$",
   });
 
-  const gecko = import.meta.env.GECKO_API;
+  const gecko = import.meta.env.VITE_GECKO_API;
 
   const fetchAllCoin = async () => {
     const options = {

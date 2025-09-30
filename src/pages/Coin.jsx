@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { coinContext } from "../context/CoinContext";
 
 const Coin = () => {
-  const gecko_key = import.meta.env.GECKO_API;
+  const gecko_key = import.meta.env.VITE_GECKO_API;
   const { coinId } = useParams();
   const [coinData, setCoinData] = useState(null);
   const [historicalData, setHistoricalData] = useState(null);
